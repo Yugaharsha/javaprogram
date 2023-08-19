@@ -1,0 +1,22 @@
+package javaapplication1;
+import java.util.*;
+public class Javaapplication1 {
+
+    public static void main(String args[]) {
+       int num ;
+               double result = 0.0;
+               System.out.println("enter the number:");
+               Scanner obj=new Scanner(System.in);
+               num=obj.nextInt();
+System.out.println("harmonic series:");
+while(num>0){
+    result=result+(double)1/num;
+    num--;
+}
+    System.out.print(result);
+    
+            
+// TODO code application logic here
+    }
+    
+}
