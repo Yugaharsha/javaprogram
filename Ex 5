@@ -1,0 +1,21 @@
+package com;
+
+import com.loan.LoanAccount;
+
+public class Com {
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int n = args.length;
+        int s = Integer.parseInt(args[0]);
+        int c = Integer.parseInt(args[1]);
+        int d = Integer.parseInt(args[2]);
+        
+      LoanAccount la = new LoanAccount();
+        la.Transaction(s,c,d);
+
+        
+    }
+    
+}
