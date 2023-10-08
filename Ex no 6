@@ -1,0 +1,228 @@
+/*
+// ThrowUsedCarExceptions.java file
+
+import java.util.*;
+
+public class ThrowUsedCarExceptions 
+
+{
+
+ public static void main(String[] args)
+
+ {
+
+ UsedCar[] uc = new UsedCar[8];
+
+ Scanner obj = new Scanner(System.in);
+
+ String VIN, make;
+
+ int year, mileage, price;
+
+ System.out.println("Enter the details of 8 Cars...");
+
+ for(int i=0;i<8;i++)
+
+ { System.out.print("\nEnter vin, make, year, mileage, and price "); 
+
+ VIN = obj.next();
+
+ make = obj.next();
+
+ year = obj.nextInt();
+
+ price = obj.nextInt();
+
+ mileage = obj.nextInt();
+
+ uc[i] = new UsedCar(make, VIN, year, mileage, price);
+
+ } 
+
+ System.out.println("\n\nUsedCar objects are constructed Sucessfully!\n");
+
+ for(UsedCar c:uc)
+
+ {
+
+ if(c.year!=0)
+
+ System.out.println(c);}
+
+ }}
+// UsedCar.java file
+
+public class UsedCar 
+
+{
+
+ String make;
+
+ int VIN,year, mileage, price, c=0;
+
+ UsedCar(String make, String VIN, int year, int mileage, int price)
+
+ {
+
+ try
+
+ {
+
+ String[] m= {"Ford","Honda","Toyota","Chrysler","Other"};
+
+ if(VIN.length()!=4 || year>2014 || year<1990 ||mileage<0 || price<0)
+
+ {
+
+ throw new UsedCarException(VIN);
+
+ }
+
+ for(String s:m)
+
+ {
+
+ if(s.equalsIgnoreCase(make))
+
+ break;
+
+ else
+
+ c+=1;
+
+ }
+
+ if(c==4)
+
+ throw new UsedCarException(VIN);
+
+ this.make = make;
+
+ int V = Integer.parseInt(VIN);
+
+ this.VIN = V;
+
+ this.year = year;
+
+ this.price=price;
+
+ this.mileage=mileage;
+}
+
+ catch(UsedCarException e)
+
+ {
+
+ System.out.println(e.getMessage());
+
+ } }
+
+ public String toString()
+
+ {
+
+ return 
+
+"VIN:"+VIN+"\tMake:"+make+"\tYear:"+year+"\tMileage:"+mileage+"\tPrice:"+pri
+
+ce+"\t";
+
+ }
+
+}
+
+// UsedCarException.java file
+
+public class UsedCarException extends Exception
+
+{
+
+ UsedCarException(String VIN)
+
+ {
+
+ super(" Error! In VIN");
+
+ }
+
+}
+*/
+package javaapplication1;
+
+import java.util.*;
+public class NewClass1 {
+
+ public static void main(String args[]){
+
+ Scanner obj = new Scanner(System.in);
+
+ String a[] = new String[5];
+
+ System.out.println("Enter string");
+
+ String n = obj.next(); 
+
+ try {
+
+ int i = Integer.parseInt(n);
+
+ }
+
+ catch(NumberFormatException e){
+
+ System.out.println("Number Format Exception");
+
+ }
+
+ try {
+
+ char c = n.charAt(20);
+
+ }
+
+ catch(StringIndexOutOfBoundsException ex) {
+
+ System.out.println("String index out of range");
+
+ }
+
+ System.out.println("Enter array of string");
+
+ for(int i=0;i<a.length;i++){
+
+ a[i] = obj.next();
+
+ }
+
+ try{
+
+ String sub = a[10] ;
+
+ }
+
+ catch(ArrayIndexOutOfBoundsException arr){
+
+ System.out.println("Array Index Out Of Bounds Exception"); 
+
+}
+
+ System.out.println("enter two numbers:");
+int a1= obj.nextInt();
+
+ int a2= obj.nextInt();
+
+ try{
+
+ int res = a1/a2;
+
+ }
+
+ catch(ArithmeticException u){
+
+ System.out.println("Arithmetic Exception");
+
+ }
+
+ }
+
+}
